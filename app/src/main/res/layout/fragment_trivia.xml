@@ -1,0 +1,59 @@
+<layout>
+    <data>
+        <variable
+            name="viewModel"
+            type="io.daio.triviabinding.Trivia.TriviaViewModel" />
+        <variable
+            name="listener"
+            type="io.daio.triviabinding.fragments.TriviaFragment.Listener"/>
+    </data>
+
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/questionText"
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:text="@{viewModel.question}"/>
+
+        <Button
+            android:id="@+id/option1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/questionText"
+            android:text="@{viewModel.options[0]}"
+            android:onClick="@{listener}"
+            />
+
+        <Button
+            android:id="@+id/option2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/option1"
+            android:text="@{viewModel.options[1]}"
+            android:onClick="@{listener}"
+            />
+
+        <Button
+            android:id="@+id/option3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/option2"
+            android:text="@{viewModel.options[2]}"
+            android:onClick="@{listener}"
+            />
+
+        <Button
+            android:id="@+id/option4"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/option3"
+            android:text="@{viewModel.options[3]}"
+            android:onClick="@{listener}"
+            />
+
+    </RelativeLayout>
+</layout>
